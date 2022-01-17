@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
+
+.regis-container{
+    height: 500px;
+    display: flex;
+    align-items: center;
+}
+.regis-content{
+    margin: auto;
+}
+.regis-content input{
+    border: 2px solid black;
+    border-radius: 7px;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 400px;
+    font-size: 17px;
+}
+.regis-content button{
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 7px;
+    padding: 5px;
+    width: 424px;
+    font-size: 19px;
+    background-color: #1877f2;
+    color: whitesmoke;
+    font-family: 'Mochiy Pop P One', sans-serif;
+}
+.regis-content button:hover{
+    background-color:#086ef3;
+    color: white;
+}

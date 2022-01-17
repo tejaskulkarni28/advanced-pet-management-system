@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
+
+.login-container{
+    height: 300px;
+    display: flex;
+    align-items: center;
+}
+.login-content{
+    margin: auto;
+}
+.login-content input{
+    border: 2px solid black;
+    border-radius: 7px;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 400px;
+    font-size: 17px;
+}
+.login-content button{
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 7px;
+    padding: 5px;
+    width: 424px;
+    font-size: 19px;
+    background-color: #1877f2;
+    color: whitesmoke;
+    font-family: 'Mochiy Pop P One', sans-serif;
+}
+.login-content button:hover{
+    background-color:#086ef3;
+    color: white;
+}

@@ -1,9 +1,15 @@
 import React from "react";
+import '../style/login.css';
 
 const Login = ()=>{
     return(
-        <div>
+        <div className="login-container">
+            <div className="login-content">
             {/* All the login neccessary things will here.  */}
+            <input type="text" placeholder="Enter PetBucket Id" /><br/>
+            <input type="password" placeholder="Enter Password" /><br/>
+            <button>Login</button>
+            </div>
         </div>
     )
 }

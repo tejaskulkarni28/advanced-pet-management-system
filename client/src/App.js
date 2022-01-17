@@ -1,9 +1,11 @@
 import React from "react";
+import DefaultPage from "./pages/DefaultPage";
+import './style/app.css';
 
 function App() {
   return (
     <div>
-      <h1>Hello Tejas</h1>
+      <DefaultPage />
     </div>
   );
 }

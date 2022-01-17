@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
+
+.nav-container{
+    cursor: pointer;
+    background-color: #1877f2;
+    padding: 15px;
+    color: white;
+    font-size: 22px;
+    font-weight: 550;
+    font-family: 'Mochiy Pop P One', sans-serif;
+}
+.nav-container li:hover{
+    color: whitesmoke;
+}

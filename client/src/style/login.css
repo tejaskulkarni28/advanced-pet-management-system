@@ -31,3 +31,33 @@
     background-color:#086ef3;
     color: white;
 }
+
+@media only screen and (max-width: 600px){
+    .login-container input{
+        display: flex;
+        align-items: center;
+    }
+    .login-content input{
+        width: 100%;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    .login-container button{
+        text-align: center;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+    }
+    .login-content button{
+        cursor: pointer;
+        border: 2px solid black;
+        border-radius: 7px;
+        padding: 1px;
+        width: 100px;
+        font-size: 15px;
+        background-color: #1877f2;
+        color: whitesmoke;
+        font-family: 'Mochiy Pop P One', sans-serif;
+    }
+}

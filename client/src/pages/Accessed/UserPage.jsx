@@ -1,9 +1,10 @@
 import React from "react";
+import AccessedNavBar from "../../components/AccessedNavBar";
 
 const UserPage = ()=>{
     return(
         <div>
-            <h1>Welcome User</h1>
+            <AccessedNavBar />
         </div>
     )
 }

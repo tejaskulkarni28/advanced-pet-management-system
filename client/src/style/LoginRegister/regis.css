@@ -7,6 +7,7 @@
 }
 .regis-content{
     margin: auto;
+    /* height: 300px; */
 }
 .regis-content input{
     border: 2px solid rgb(121, 118, 118);
@@ -59,7 +60,7 @@
         flex-direction: row;
     }
     .regis-content button{
-        cursor: pointer;
+        /* cursor: pointer;
         border: 2px solid black;
         border-radius: 7px;
         padding: 1px;
@@ -67,7 +68,13 @@
         font-size: 15px;
         background-color: #1877f2;
         color: whitesmoke;
-        font-family: 'Mochiy Pop P One', sans-serif;
+        font-family: 'Mochiy Pop P One', sans-serif; */
+        color:white;
+        font-weight:1000;
+        text-align:center;
+        width: 200px;
+        display:flex;
+        align-items: center;
     }
 }
 

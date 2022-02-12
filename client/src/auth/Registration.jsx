@@ -17,6 +17,12 @@ const Registration = ()=>{
             lname: lname,
             pass:pass,
             uniqueID:uniqueID
+        }).then((response)=>{
+            console.log(response)
+
+            if(response.data[0].user_id > 0){
+                alert("User already registered!")
+            }
         })
     }
 

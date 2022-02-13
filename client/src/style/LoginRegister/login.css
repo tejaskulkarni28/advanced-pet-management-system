@@ -42,7 +42,7 @@
 }
 
 @media only screen and (max-width: 600px){
-    .login-container input{
+    /* .login-container input{
         display: flex;
         align-items: center;
     }
@@ -59,20 +59,27 @@
         flex-direction: row;
     }
     .login-content button{
-        /* cursor: pointer;
-        border: 2px solid black;
-        border-radius: 7px;
-        padding: 1px;
         width: 100px;
-        font-size: 15px;
-        background-color: #1877f2;
-        color: whitesmoke;
-        font-family: 'Mochiy Pop P One', sans-serif; */
-        color:white;
-        font-weight:1000;
-        text-align:center;
+    } */
+    .login-container{
+        display: block;
+    }
+    .login-container input{
+        text-align: center;
+        padding: 6px;
+    }
+    .login-content{
+        margin-top: 50px;
+        text-align: center;
+        height: 300px;
+    }
+    .login-content input{
+        width: 250px;
+    }
+    .login-container button{
+        text-align: center;
+        padding: 5px;
         width: 200px;
-        display:flex;
-        align-items: center;
+        font-weight: 1000;
     }
 }

@@ -62,8 +62,17 @@ app.post('/Register', (req, res)=>{
     })
 })
 
+
+// for local system
+// app.listen(
+//     3001,()=>{
+//         console.log("Server Started at Port 3001! ");
+//     }
+// )
+
+// for heroku server
 app.listen(
-    3001,()=>{
-        console.log("Server Started at Port 3001! ");
+    process.env.PORT || PORT,()=>{
+        console.log(`Server running on port ${PORT}` );
     }
 )

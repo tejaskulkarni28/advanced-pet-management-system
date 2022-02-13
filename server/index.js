@@ -6,6 +6,8 @@ const mysql = require('mysql');
 app.use(cors())
 app.use(express.json())
 
+const PORT = 3001;
+
 const db = mysql.createConnection({
     user:"root",
     database:"pu_schema",

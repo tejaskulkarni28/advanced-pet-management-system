@@ -71,8 +71,7 @@ app.post('/Register', (req, res)=>{
 // )
 
 // for heroku server
-app.listen(
-    process.env.PORT || PORT,()=>{
+app.listen(process.env.PORT ||  PORT,()=>{
         console.log(`Server running on port ${PORT}` );
     }
 )

@@ -55,15 +55,8 @@ app.post('/Register', (req, res)=>{
         else{
                 db.query('INSERT INTO Registered_User(user_fname, user_lname, user_password, user_unique_id) VALUES(?,?,?,?)',
                     [fname,lname,pass,uniqueID],
-                    (err)=>{
-                        if(err){
-                            console.log(err)
-                        }
-                        else{
-                            console.log("User Registered! ")
-
-                            res.send(response)
-                        }
+                    (response)=>{
+                        res.send(response)
                 })
         }
     })

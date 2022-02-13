@@ -11,9 +11,6 @@ const DefaultPage = ()=>{
             <Login />
             <Registration />
             <Footer />
-            {/* Here there are going to be 2 components 
-            1. Login
-            2. Registration */}
         </div>
     )
 }

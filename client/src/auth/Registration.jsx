@@ -10,7 +10,6 @@ const Registration = ()=>{
     const[pass, setPass] = useState('');
     const[uniqueID, setUniqueID] = useState();
 
-    // when click on register button function will get trigger
     const register = ()=>{
         Axios.post("http://localhost:3001/Register", {
             fname: fname,
@@ -20,16 +19,18 @@ const Registration = ()=>{
         }).then((response)=>{
             console.log(response)
 
+            if(response.data === ''){
+                alert("Successfully Registered!")
+            }
+
             if(response.data[0].user_id > 0){
-                alert("User already registered!")
+                alert("ID already there!!")
             }
         })
     }
 
     return(
         <div className="regis-container">
-            {/* Here all the Registration neccessary things 
-            will be there. */}
             <div className="regis-content">
                 <input type="text" placeholder="First Name" onChange={(e)=>{setFirstName(e.target.value)}} required/><br/>
                 <input type="text" placeholder="Last Name" onChange={(e)=>{setLastName(e.target.value)}} required/><br/>

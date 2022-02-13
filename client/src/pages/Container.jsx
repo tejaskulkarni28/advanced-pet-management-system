@@ -4,7 +4,6 @@ import DefaultPage from "./DefaultPage";
 const Container = ()=>{
     return(
         <div>
-            {/* Here I want Default Registration and Login Page. */}
             <DefaultPage />
         </div>
     )

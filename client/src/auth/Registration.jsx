@@ -17,7 +17,6 @@ const Registration = ()=>{
             pass:pass,
             uniqueID:uniqueID
         }).then((response)=>{
-            console.log(response)
 
             if(response.data === ''){
                 alert("Successfully Registered!")

@@ -1,3 +1,4 @@
+
 const express = require('express');
 const app = express();
 const cors = require('cors');
@@ -8,6 +9,7 @@ app.use(express.json())
 
 const PORT = 3001;
 
+
 const db = mysql.createConnection({
     user:"root",
     database:"pu_schema",
@@ -15,6 +17,10 @@ const db = mysql.createConnection({
     host:"localhost",
     dateStrings:"true"
 })
+
+
+let unqID = 101;
+let logged = false;
 
 app.post('/Login', (req, res)=>{
 
@@ -26,11 +32,15 @@ app.post('/Login', (req, res)=>{
         if(err){
             console.log(err)
         }
+        console.log(response + " bug 101")
         if(response[0]){
 
             res.send(response[0])
 
             console.log("User LoggedIN! ")
+
+            unqID = UserUniqueID;
+            logged = true;
         }
         else{
             res.send(response)
@@ -59,20 +69,77 @@ app.post('/Register', (req, res)=>{
                     [fname,lname,pass,uniqueID],
                     (response)=>{
                         res.send(response)
+                        console.log(response)
                 })
         }
     })
 })
 
+app.get('/username', (request,response)=>{
+    db.query('SELECT user_id, user_fname, user_lname FROM Registered_User WHERE user_unique_id = ?',
+    [unqID],
+        (err,res)=>{
+            response.send(res)
+            console.log(res)
+        })
+})
 
-// for local system
-// app.listen(
-//     3001,()=>{
-//         console.log("Server Started at Port 3001! ");
-//     }
-// )
 
-// for heroku server
+// done to be afterwards when the username is being rendered in edituser component
+let user_id = Math.min;
+app.post('/updateUserName', (request, response)=>{
+    const userFirstName = request.body.userFirstName;
+    const userLastName = request.body.userLastName;
+    user_id = request.body.user_id;
+
+    db.query('UPDATE Registered_User SET user_fname = ?, user_lname = ? WHERE user_id = ?',[
+        userFirstName,
+        userLastName,
+        user_id
+    ],
+    // (err, res)=>{
+    //     if(err){
+    //         console.log(err)
+    //     }
+    //     if(res){
+    //         console.log("values updated")
+    //         db.query('SELECT user_fname, user_lname FROM Registered_User WHERE user_id = ?',
+    //         [user_id],
+    //         (res)=>{
+    //             response.send(res)
+    //         })
+    //     }
+    // })
+
+    (err, res)=>{
+        if(err){
+            console.log(err)
+        }
+        else{
+            console.log("Values updated succesfully!")
+            if(res.affectedRows == 1){
+                    db.query('SELECT user_fname, user_lname FROM Registered_User WHERE user_id = ?',
+                    [user_id],
+                        (err,res)=>{
+                            console.log("Values from database:")
+                            console.log(res)
+                            response.send(res)
+                        })
+            }
+        }
+    }
+    )
+})
+// app.get('/updatedUserName', (request,response)=>{
+//     user_id = request.body.user_id;
+//     db.query('SELECT user_fname, user_lname FROM Registered_User WHERE user_id = ?',
+//     [user_id],
+//         (err,res)=>{
+//             if(res)
+//                 console.log("got values!")
+//        })
+// })
+
 app.listen(process.env.PORT ||  PORT,()=>{
         console.log(`Server running on port ${PORT}` );
     }

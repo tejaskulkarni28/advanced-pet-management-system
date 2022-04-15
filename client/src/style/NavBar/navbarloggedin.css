@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@200&family=Mochiy+Pop+P+One&display=swap');
+
+.nav-container{
+    cursor: pointer;
+    background-color: #1877f2;
+    padding: 10px;
+    color: white;
+    font-size: 22px;
+    font-weight: 550;
+    font-family: 'Bitter', serif;
+}
+.nav-container ul{
+    display:flex;
+}
+.nav-container li:hover{
+    color: whitesmoke;
+}
+.content{
+    margin-left: 50px;
+    font-size: 18px;
+}
+
+.r-content li{
+    float: right;
+    display: flex;
+    font-size: 20px;
+    font-family: 'Bitter', serif;
+}
+.l {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.r{
+    margin-left: 5px;
+}
+.l button{
+    background-color: #1877f2;
+    border: 1px solid #1877f2;
+    color: white;
+    font-size: 20px;
+    font-family: 'Bitter', serif;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px){
+    .nav-container{
+        padding: 10px;
+        font-size: 21px;
+        font-weight:1000;
+    }
+}

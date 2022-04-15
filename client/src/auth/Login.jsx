@@ -3,21 +3,26 @@ import '../style/LoginRegister/login.css';
 import { useState } from "react";
 import Axios from "axios";
 
+import { useNavigate} from "react-router";
+
+
 const Login = ()=>{
+    let Navigate = useNavigate();
+
     const [userPassword, setUserPassword] = useState("");
     const [userUniqueID, setUserUniqueID] = useState();
 
-    const sendUserAuth = ()=>{
+    function sendUserAuth(){
+
         Axios.post("http://localhost:3001/Login",{
             UserPassword:userPassword,
             UserUniqueID: userUniqueID
         }).then((response)=>{
-            console.log(response.data.user_id)
             if(response.data.user_id > 0){
-                alert("Logged In!")
+                   Navigate('/loggedin')
             }
             else{
-                alert("Register first!")
+                alert("Values Incorrect/Not registered!")
             }
         })
     }

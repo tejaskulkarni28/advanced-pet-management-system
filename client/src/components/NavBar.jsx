@@ -1,11 +1,13 @@
 import React from "react";
-import '../style/NavBar/navbar.css'; 
+import '../style/NavBar/navbar.css';
+import {useNavigate} from "react-router";                 
 
 const NavBar = ()=>{
+    let navigate = useNavigate();
     return(
         <div className="nav-container">
             <ul>
-                <li>Pet Bucket</li>
+                <li><navigate path="/">Pet Bucket</navigate></li>
             </ul>
         </div>
     )

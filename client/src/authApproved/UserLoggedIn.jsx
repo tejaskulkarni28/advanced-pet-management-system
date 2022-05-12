@@ -5,6 +5,7 @@ import Axios from "axios";
 import {useNavigate} from "react-router";
 import {Link, useLink} from "react-router-dom";
 import '../style/NavBar/navbarloggedin.css';
+import Footer from "../components/Footer";
 
 const UserLoggedIn = ()=>{
 
@@ -35,6 +36,8 @@ const UserLoggedIn = ()=>{
         Navigate("/")
     }
 
+    const usrID_for_add_pet_container = user_id; // this variable naming seems unproffessional but it is ok sometimes to make it work :(
+
     return(
         <div>
             <div className="nav-container">
@@ -56,7 +59,8 @@ const UserLoggedIn = ()=>{
                         })}
                 </div>
             </div>
-            <AddPetContainer/>
+            <AddPetContainer data={usrID_for_add_pet_container}/>
+            <Footer/>
         </div>
     )
 }

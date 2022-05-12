@@ -1,63 +1,126 @@
 @import url('https://fonts.googleapis.com/css2?family=Bitter:wght@200&family=Mochiy+Pop+P+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
 .add-pet-container{
-    background-color:#f1f1f1;
-    height: 60px;
+    height: auto;
+    display: grid;
+    place-items: center;
+    /* background:
+      linear-gradient(to bottom right, #3C4BBD 15%, transparent),
+      radial-gradient(circle at 100% 0%, rgba(255,255,255,.2) 10%, transparent 20%) center center / 15px 15px,
+      linear-gradient(to bottom right, #3C4BBD, #57ADD8); */
 }
-.add-pet-container ul{
-    display: flex;
-    height: 60px;
-}
-.add-pet-container li{
-    height: 60px;
-    width: 100px;
+.add-pet-content{
+    border: 1px solid black;
+    border-radius: 10px;
     display: flex;
     align-items: center;
+    text-align: center;
+    width: 350px;
+    margin-top: 100px;
+    background-color: white;
+    height: 300px;
+}
+.add-pet-content ul{
     margin: auto;
-    margin-left: 100px;
-    cursor: pointer;
-    font-size: 19px;
-    font-family: 'Bitter', serif;
+}
+.add-pet-container input{
+    margin-top: 5px;
+    margin-bottom: 50px;
+    width: 300px;
+    padding: 10px;
 }
 .add-pet-container button{
-    height: 35px;
-    width: 35px;
-    padding: 5px;
-    border-radius: 50px;
-    cursor: pointer;
-    font-size: large;
-    font-family: 'Bitter', serif;
-    border: 2px solid rgb(0, 0, 0);
-}
 
-@media only screen and (max-width: 600px){
-    .add-pet-container{
-        height: auto;
-    }
-    .add-pet-container ul{
-        display: flex;
-        height: auto;
-        flex-wrap: wrap;
-    }
-    .add-pet-container li{
-        font-family: 'Bitter', serif;
-        height: 50px;
-        width: 100px;
-        display: flex;
-        align-items: center;
-        margin: auto;
-        margin-left: 100px;
-        cursor: pointer;
-        font-size: 19px;
-    }
-    .add-pet-container button{
-        height: 35px;
-        width: 35px;
-        padding: 5px;
-        border-radius: 50px;
-        cursor: pointer;
-        font-size: large;
-        font-family: 'Bitter', serif;
-        border: 2px solid rgb(0, 0, 0);
-    }
+    margin-top: 5px;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 16px;
+    font-weight: 1000;
+    background-color: #1877f2;
+    cursor: pointer;
+    width: 324px;
+    padding: 3px;
 }
+.getPetNames{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.wrapper {
+    margin: 50px;
+    cursor: pointer;
+    margin-top: 100px;
+    position: relative;
+    perspective: 40em;
+    display: grid;
+    transform-style: preserve-3d;
+  }
+  
+  .card {
+    grid-area: 1 / 1;
+    height: 100px;
+    width: 200px;
+    transform: translateX(10px) rotateY(25deg) rotateX(10deg);
+    background:#1877f2; 
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 60px;
+    font-weight: 900;
+    backface-visibility: hidden;
+    box-shadow: 0 10px 30px -3px rgba(0,0,0,.1);
+  }
+  a{
+    text-decoration: none;
+    color:white
+  }
+  h1 {
+    color: white;
+    font-size: 30px;
+    font-weight: 900;
+  }
+  
+  .card .enclosed {
+    /* background: #000; */
+    line-height: 1;
+    color: white;
+    padding: 0 5px;
+    display: inline-block;
+    transform: translate(-1px, 1px) scale(0.75);
+    transform-origin: right center;
+  }
+  
+  .wrapper:before {
+    --bw: 9px;
+    grid-area: 1 / 1;
+    content: '';
+    backface-visibility: hidden;
+    height: 100%;
+    width: 100%;
+    margin-top: calc(-1 * var(--bw));
+    margin-left: calc(-1 * var(--bw));
+    background: transparent;
+    transform: translateX(-60px) rotateY(-30deg) rotateX(15deg) scale(1.03);
+    pointer-events: none;
+    /* border: var(--bw) solid #000; */
+    border: 9px solid black;
+    box-sizing: content-box;
+  }
+  
+  
+  .wrapper:hover > div,
+  .wrapper:hover:before {
+    transform: none;
+  }
+  
+  
+  .wrapper > div,
+  .wrapper:before {
+    will-change: transform;
+    transition: .3s transform cubic-bezier(.25,.46,.45,1);
+  }

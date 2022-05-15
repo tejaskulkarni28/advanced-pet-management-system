@@ -147,7 +147,7 @@ app.post('/addPetConfig', (request, response)=>{
         if(err){
             console.log(err)
         }
-        if(res[0].COUNT <= 3){
+        if(res[0].COUNT < 4){
             // Insert New Pet
             db.query('INSERT INTO pu_schema.PetData(petUserId,PetName) VALUES(?,?)',
             [unqID,newPet],

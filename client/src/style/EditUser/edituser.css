@@ -8,9 +8,11 @@
     margin: auto;
     background-color: #f1f1f1;
     width: 500px;
-    height: auto;
+    height: 500px;
 }
 .edit-user-content{
+    border-radius: 15px;
+    border: 1px solid black;
     text-align: center;
     height: auto;
     width: 500px;

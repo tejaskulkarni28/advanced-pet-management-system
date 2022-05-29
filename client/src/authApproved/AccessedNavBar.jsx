@@ -1,16 +1,12 @@
 import React from "react";
-import AddPetContainer from "../components/AddPetContainer";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useEffect } from "react";
 import Axios from "axios";
 import {useNavigate} from "react-router";
-import {Link, useLink} from "react-router-dom";
-import '../style/NavBar/navbarloggedin.css';
-import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
 
-const UserLoggedIn = ()=>{
-
+const AccessedNavBar =()=>{
     const Navigate = useNavigate();
-
     const[userName, setUserName] = useState([]);
     const[user_id, setUserID] = useState();
 
@@ -27,17 +23,12 @@ const UserLoggedIn = ()=>{
         },[])
     }
     Username();
-
-    const RedirectUserSettings =()=>{
-        Navigate("/user-settings")
-    }
-
     const navigatetohome =()=>{
-        Navigate("/")
+        Navigate("/loggedin")
     }
-
-    const usrID_for_add_pet_container = user_id; // this variable naming seems unproffessional but it is ok sometimes to make it work :(
-
+    // const navigatetoback =()=>{
+    //     Navigate("/")
+    // }
     return(
         <div>
             <div className="nav-container">
@@ -53,17 +44,15 @@ const UserLoggedIn = ()=>{
                                     username:userName
                                 }}
                                 >
-                                 <button onClick={RedirectUserSettings}>{i.user_fname} {i.user_lname}</button>
+                                 <button>{i.user_fname} {i.user_lname}</button>
                                 </Link>
                                 </li>
                             </ul>
                         })}
                 </div>
             </div>
-            <AddPetContainer data={usrID_for_add_pet_container}/>
-            <Footer/>
         </div>
     )
 }
 
-export default UserLoggedIn;
+export default AccessedNavBar;

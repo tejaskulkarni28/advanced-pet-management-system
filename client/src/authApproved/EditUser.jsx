@@ -3,6 +3,8 @@ import '../style/EditUser/edituser.css';
 import Axios from "axios";
 import UserLoggedIn from "./UserLoggedIn";
 import {useLocation} from "react-router-dom";
+import NavBar from "../components/NavBar";
+import AccessedNavBar from "./AccessedNavBar";
 
 const EditUser = ()=>{
 
@@ -10,6 +12,9 @@ const EditUser = ()=>{
 
     const location = useLocation();
     const user_id = location.state.user_id;
+
+    // not needed now
+    const username = location.state.username;
 
     const[userFirstName, setUserFirstName] = useState('')
     const[userLastName, setUserLastName] = useState('');
@@ -31,13 +36,17 @@ const EditUser = ()=>{
         })
     }
 
+    // const GetUser =()=>{
+    //     Axios.getUser
+    // }
+
     return(
         <div>
-            <UserLoggedIn />
+            <AccessedNavBar/>
             <div className="edit-user-container">
                 <div className="edit-user-content">
                     <div className="edit-user-h1">
-                        <h1>Updated Name: {updatedUserFirstName} {updatedUserLastName}</h1><br/>
+                        <h1>Updated Name: {updatedUserFirstName}{updatedUserLastName}</h1><br/>
                     </div>
                     <label>Change Username</label><br/>
                     <input type="text" placeholder="First Name" onChange={(e)=>{setUserFirstName(e.target.value)}} required/><br/>

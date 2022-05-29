@@ -13,7 +13,7 @@
     display:flex;
 }
 .nav-container li:hover{
-    color: whitesmoke;
+    color: black;
 }
 .content{
     margin-left: 50px;
@@ -40,6 +40,9 @@
     font-size: 20px;
     font-family: 'Bitter', serif;
     cursor: pointer;
+}
+.l button:hover{
+    color: black;
 }
 
 @media only screen and (max-width: 600px){

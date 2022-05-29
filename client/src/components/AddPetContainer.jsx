@@ -32,6 +32,7 @@ const AddPetContainer = (props)=>{
                         userID:props.data 
                     }
             }).then((response)=>{
+                if(response.data)
                 setDisplayPetName(displayPetName);
                 setDisplayPetName(response.data)
                 console.log(response.data)
@@ -63,6 +64,7 @@ const AddPetContainer = (props)=>{
                 {displayPetName.map((value)=>{
                              return ( 
                                 <div className="wrapper">
+                                    {/* <img src={require('../images/puppy_dog_cute_150034_300x188.jpeg')} /> */}
                                     <div className="card">
                                         <h1>
                                            <span className="enclosed" ><Link to="/PetData" state={{pname:value.PetName, petId:value.petId}}>{value.PetName}</Link></span>
